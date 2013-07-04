@@ -15,14 +15,14 @@ A plugin that ease the integration of the iAdvize Realtime Customer Relationship
 A multi-channel, real time product
 Enable your visitors to receive easy, direct assistance with free call-back or Chat on your website, mobile app or Fan Page.
 
-Target the right visitors 
-Maximize your return on investment by targeting the right visitors and save sales by initiating dialogue with visitors about to abandon their purchase. 
+Target the right visitors
+Maximize your return on investment by targeting the right visitors and save sales by initiating dialogue with visitors about to abandon their purchase.
 
-Measure your performance 
-It is easy to monitor your operators' work, customer satisfaction and sales made using Click to Chat and Click to Call. 
+Measure your performance
+It is easy to monitor your operators' work, customer satisfaction and sales made using Click to Chat and Click to Call.
 
-Benefit from our expertise 
-Our {iim} integration method means you benefit from our expertise in targeting and Click to Chat training. 
+Benefit from our expertise
+Our {iim} integration method means you benefit from our expertise in targeting and Click to Chat training.
 
 To learn more about iAdvize visit [iAdvize](http://www.iadvize.com/), you can :
 
