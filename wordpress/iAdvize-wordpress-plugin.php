@@ -5,15 +5,16 @@ Plugin URI: http://www.iadvize.com/
 Description:
 A plugin that ease the integration of the <a href="http://www.iadvize.com/">iAdvize</a>
 	livechat application.
-Version: 1.0
+Version: 2.0
 Author: Jonathan Gueron
 Author URI: http://www.iadvize.com/
 
 === VERSION HISTORY ===
   09.14.10 - v1.0 - Initial release
+  08.07.13 - v2.0 - Asynchrone script and documentation
 
 === LEGAL INFORMATION ===
-  Copyright (C) 2010 iAdvize <contact@iadvize.com> - www.iadvize.com
+  Copyright (C) 2013 iAdvize <contact@iadvize.com> - www.iadvize.com
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
