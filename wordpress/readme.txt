@@ -2,7 +2,7 @@
 Contributors: jonathan gueron
 Tags: live chat, livechat, chat, live support
 Requires at least: 2.7
-Tested up to: 2.8.*
+Tested up to: 3.5.*
 Stable tag: 2.0
 
 A plugin that ease the integration of the iAdvize Realtime Customer Relationship application
@@ -28,12 +28,20 @@ To learn more about iAdvize visit [iAdvize](http://www.iadvize.com/), you can :
 
 
 == Installation ==
-
+	If you have downloaded “iadvize_wordpress_plugins” archive:
 1. Extract all files from the ZIP archive, making sure to keep the file structure intact.
 2. Upload the `iadvize-wordpress-plugin` folder to the `/wp-content/plugins/` directory.
 3. Activate the plugin through the `Plugins` menu in WordPress.
 4. Go to the `iAdvize Plugin` menu which is located under the `Settings` menu in the admin interface.
 5. Enter your iAdvize website ID to activate the plugin if ID was not already automagically filled by installer !
+
+	Else, on Worpress :
+1. Go to your WordPress Admin Panel and click on Plugins » Add New.
+2. Type in the plugin name “iadvize_wordpress_plugins” and select the last version.
+3. Choose “install now” and activate plugin.
+4. Enter your iAdvize website ID to activate the plugin if ID was not already automagically filled by installer !
+
+If your ID isn’t find automagically, use our website to find it on your admin space selecting “code à insérer” in the tab “Paramètres”.
 
 
 == Frequently Asked Questions ==

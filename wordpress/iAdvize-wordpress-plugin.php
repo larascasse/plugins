@@ -56,7 +56,7 @@ function getiAdvizeID() {
 register_activation_hook(__FILE__, 'idzPlugin_activated');
 
 /**
- * verify if the plugin is active and if the ID is informed.
+ * active the plugin and verify if the ID is informed.
  */
 function idzPlugin_activated() {
 	if (!get_option('idzID')) {
@@ -87,11 +87,14 @@ add_action('wp_footer', 'idz_insert');
 function idz_insert() {
 	if (get_option('idzID')) {
 		echo "<!-- START IADVIZE LIVECHAT -->\n
-		<script type=\"text/javascript\">\n
-		var iproto = ((\"https:\" == document.location.protocol) ? \"https://\" : \"http://\");\n
-		document.write(unescape(\"%3Cscript src='\" + iproto + \"livechat.iadvize.com/chat_init.js?sid=".
-			get_option('idzID')."' type='text/javascript'%3E%3C/script%3E\"));\n</script>\n
-		<!-- END IADVIZE LIVECHAT -->";
+			<script type='text/javascript'>\n
+				(function() {
+				var idz = document.createElement('script'); idz.type = 'text/javascript'; idz.async = true;\n
+				idz.src = document.location.protocol + \"//lc.iadvize.com/iadvize.js?sid=".get_option('idzID')."\";\n
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(idz, s);\n
+				})();\n
+			</script>\n
+		<!-- END IADVIZE LIVECHAT -->\n";
 	}
 }
 
