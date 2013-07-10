@@ -32,47 +32,43 @@
  * @package    Creadev_iAdvize
  * @author     Remi Choque <remi@creadev.info>
  */
-class Creadev_Iadvize_Block_Ga extends Mage_Core_Block_Text
-{
-   
+class Creadev_Iadvize_Block_Ga extends Mage_Core_Block_Text {
 
-  
+	/**
+	 * Prepare and return block's html output
+	 *
+	 * @return string
+	 */
+	protected function _toHtml() {
 
-    
-    /**
-     * Prepare and return block's html output
-     *
-     * @return string
-     */
-    protected function _toHtml()
-    {
-        $url = "http://www.iadvize.com/api/getcode.php?url=";
+	$url = "http://www.iadvize.com/api/getcode.php?&out=wp&url=";
 		/*
 			Prendre en compte le https://
 		*/
-		$baseurl = str_replace("http://" , "", Mage::getBaseUrl());
-		$lastIndexOf = strrpos($baseurl, '/');
+		$baseurl = str_replace("http://", "", Mage::getBaseUrl());
+		$lastIndexOf = strrpos($baseurl, 'index');
 		$length = strlen($baseurl);
-		if($lastIndexOf==$length-1){
-			$baseurl = substr($baseurl, 0, $length-1);
-		}
+		$baseurl = substr($baseurl, 0, $lastIndexOf-1);
+
 		$url = $url.$baseurl;
-        /**
-		$this->addText('
-		<!-- START IADVIZE LIVECHAT -->
-		<script type="text/javascript">
-			var iproto = (("https:" == document.location.protocol) ? "https://" : "http://");
-			document.write(unescape("%3Cscript src=" + iproto + "livechat.iadvize.com/chat_init.js?sid=358\' type=\'text/javascript\'%3E%3C/script%3E"));
-		</script>
-
-		<!-- END IADVIZE LIVECHAT -->
-        ');
-		**/
-		
 		$result = file_get_contents($url);
-		$this->addText($result);
-        
+		$this->addText("
+		<!-- START IADVIZE LIVECHAT -->
+			<script type='text/javascript'>
+			(function() {
+			var idz = document.createElement('script'); idz.type = 'text/javascript'; idz.async = true;
+			idz.src = document.location.protocol + \"//lc.iadvize.com/iadvize.js?sid=11835\";
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(idz, s);
+			})();
+			</script>
+		<!-- END IADVIZE LIVECHAT -->
+        ");
+		echo('id = '.$result);
 
-        return parent::_toHtml();
-    }
+
+		$this->addText($result);
+
+
+		return parent::_toHtml();
+	}
 }
