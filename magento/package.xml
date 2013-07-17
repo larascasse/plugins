@@ -1,83 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.7.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
-    http://pear.php.net/dtd/tasks-1.0.xsd
-    http://pear.php.net/dtd/package-2.0
-    http://pear.php.net/dtd/package-2.0.xsd">
- <name>iAdvize</name>
- <channel>connect.magentocommerce.com/community</channel>
- <summary>Extension permettant d&apos;installer très facilement le service iAdvize.com dans Magento</summary>
- <description>Extension permettant d&apos;installer très facilement le service iAdvize.com dans Magento.
-
-iAdvize.com vous permet de gérer votre relation en temps réel par chat.
-Installez iAdvize sur votre boutique en 1 clic et permettez à vos visiteurs de dialoguer en direct par chat avec les représentants de votre site.
-
-Il n&apos;y a rien à paramétrer :
-Créez un compte iadvize et téléchargez l&apos;extension. Une fois installée, l&apos;extension détecte l&apos;adresse du site et s&apos;identifie automatiquement auprès du service iAdvize.
-Vous n&apos;avez plus qu&apos;à vous connecter sur votre pupitre iAdvize pour communiquer avec vos clients. </description>
- <lead>
-  <name>Creadev</name>
-  <user>Creadev</user>
-  <email>remi@creadev.info</email>
-  <active>yes</active>
- </lead>
- <date>2010-02-15</date>
- <time>14:13:09</time>
- <version>
-  <release>1.0.1</release>
-  <api>1.0.0</api>
- </version>
- <stability>
-  <release>stable</release>
-  <api>stable</api>
- </stability>
- <license>Open Software License (OSL 3.0)</license>
- <notes>La version stable est désormais disponible.
-Pour toute question technique:
-contact@creadev.info ou www.creadev.info.
-
-NB: on a retiré la dépendance du curl</notes>
- <contents>
-  <dir name="/">
-   <dir name="Creadev">
-    <dir name="Iadvize">
-     <dir name="Block">
-      <file md5sum="554397c2e423d2fcff1cddf9a3c34062" name="Ga.php" role="magecommunity" />
-     </dir> <!-- /Creadev/Iadvize/Block -->
-     <dir name="etc">
-      <file md5sum="45e62c91317c1b93abecfa7a4b5ca528" name="config.xml" role="magecommunity" />
-     </dir> <!-- /Creadev/Iadvize/etc -->
-     <dir name="Helper">
-      <file md5sum="b808c06ef222c57b24993afe2e979bf6" name="Data.php" role="magecommunity" />
-     </dir> <!-- /Creadev/Iadvize/Helper -->
-     <dir name="Model">
-      <file md5sum="226a93490faaa9c19b408b86e3bffd85" name="Observer.php" role="magecommunity" />
-     </dir> <!-- /Creadev/Iadvize/Model -->
-    </dir> <!-- /Creadev/Iadvize -->
-   </dir> <!-- /Creadev -->
-   <dir name="frontend">
-    <dir name="default">
-     <dir name="default">
-      <dir name="layout">
-       <file md5sum="e4515777fa6bda4771c9a45807702f89" name="iadvize.xml" role="magedesign" />
-      </dir> <!-- /frontend/default/default/layout -->
-     </dir> <!-- /frontend/default/default -->
-    </dir> <!-- /frontend/default -->
-   </dir> <!-- /frontend -->
-   <dir name="modules">
-    <file md5sum="5faf919cb90b3b24efea8c6cccf70d85" name="Creadev_Iadvize.xml" role="mageetc" />
-   </dir> <!-- /modules -->
-  </dir> <!-- / -->
- </contents>
- <dependencies>
-  <required>
-   <php>
-    <min>5.2.0</min>
-    <max>6.0.0</max>
-   </php>
-   <pearinstaller>
-    <min>1.6.2</min>
-   </pearinstaller>
-  </required>
- </dependencies>
- <phprelease />
+<?xml version="1.0"?>
+<package>
+    <name>iAdvize</name>
+    <version>2.0.0</version>
+    <stability>stable</stability>
+    <license>OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Extension permettant d'installer facilement le  service iAdvize.com.</summary>
+    <description>iAdvize.com vous permet de g&#xE9;rer votre relation client en temps r&#xE9;el par chat. Installez iAdvize sur votre boutique en 1 clic et permettez &#xE0; vos visiteurs de dialoguer en direct par chat avec les repr&#xE9;sentants de votre site. Il n'y a rien &#xE0; param&#xE9;trer : Cr&#xE9;ez un compte iAdvize.com et t&#xE9;l&#xE9;chargez l'extension. Une fois install&#xE9;e, l'extension d&#xE9;tecte l'adresse du site et s'identifie automatiquement aupr&#xE8;s du service iAdvize.com. Vous n'avez plus qu'&#xE0; vous connecter sur votre pupitre iAdvize.com pour communiquer avec vos clients.</description>
+    <notes>Adding iAdvize LIVECHAT tag</notes>
+    <authors><author><name>iAdvize</name><user>jerome</user><email>jerome.regoin@iadvize.com</email></author></authors>
+    <date>2013-07-17</date>
+    <time>13:09:07</time>
+    <contents><target name="magecommunity"><dir name="Iadvize"><dir name="Iadvizeplugin"><dir name="Block"><file name="Tag.php" hash="253543938ca3dc611f035a8a952431ba"/></dir><dir name="Helper"><file name="Data.php" hash="b315f4bafc98fdb9d0d81bda93f169cf"/></dir><dir name="Model"><file name="Observer.php" hash="92beeb067d8f2a1d32825ff257b4a1ba"/></dir><dir name="etc"><file name="config.xml" hash="ec5857df46c9fb873ae17d199ec00599"/><file name="system.xml" hash="78235dc319816614d1326b720a777ece"/></dir><dir name="sql"><dir name="iadvize_iadvizeplugin_setup"><file name="mysql4-install-1.0.0.php" hash="194b69737f54567b533c25ad4645080a"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="iadvize.xml" hash="8400cf8c147c91ce8529cd36ce442ac9"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Iadvize_Iadvizeplugin.xml" hash="ee9e59d778237fd17e794364209aec2d"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>5.5.0</max></php></required></dependencies>
 </package>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Iadvize_Iadvizeplugin>
+            <version>2.0.1</version>
+        </Iadvize_Iadvizeplugin>
+    </modules>
+    <global>
+        <models>
+            <iadvize><class>Iadvize_Iadvizeplugin_Model</class></iadvize>
+        </models>
+        <blocks>
+            <iadvize>
+                <class>Iadvize_Iadvizeplugin_Block</class>
+            </iadvize>
+        </blocks>
+        <helpers>
+            <iadvize><class>Iadvize_Iadvizeplugin_Helper</class></iadvize>
+        </helpers>
+        <resources>
+            <iadvize_iadvizeplugin_setup>
+                <setup>
+                    <module>Iadvize_Iadvizeplugin</module>
+                </setup>
+            </iadvize_iadvizeplugin_setup>
+        </resources>    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <iadvize_iadvizeplugin module="Iadvize_Iadvizeplugin">
+                    <file>iadvize.xml</file>
+                </iadvize_iadvizeplugin>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <iadvize_iadvizeplugin>
+                                            <title>iAdvize</title>
+                                        </iadvize_iadvizeplugin>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>

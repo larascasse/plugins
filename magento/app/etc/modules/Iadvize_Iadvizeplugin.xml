@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config>
 	<modules>
-		<Creadev_Iadvize>
+		<Iadvize_Iadvizeplugin>
 			<active>true</active>
 			<codePool>community</codePool>
-		</Creadev_Iadvize>
+		</Iadvize_Iadvizeplugin>
 	</modules>
 </config>
