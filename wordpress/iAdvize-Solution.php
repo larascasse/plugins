@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: iAdvize Wodpress Plugin
+Plugin Name: iAdvize Solution
 Plugin URI: http://www.iadvize.com/
 Description:
 A plugin that ease the integration of the <a href="http://www.iadvize.com/">iAdvize</a>
@@ -69,7 +69,7 @@ function idzPlugin_activated() {
 }
 
 $idz_domain = 'iAdvizeWPPlugin';
-load_plugin_textdomain($idz_domain, 'wp-content/plugins/iadvize-wordpres-plugin');
+load_plugin_textdomain($idz_domain, 'wp-content/plugins/iadvize-solution');
 add_action('init', 'idz_init');
 
 /**
@@ -81,6 +81,42 @@ function idz_init() {
 	}
 }
 
+add_action('wp_footer', 'jigoshop_install');
+/**
+ *
+ * Verify if jigosho is already install and activate
+ */
+function jigoshop_install() {
+	foreach (get_option('active_plugins') as $activ) {
+		$jigo =false;
+		if (preg_match('/jigoshop/i', $activ)) {
+			$jigo = true;
+		}
+	}
+	if ($jigo) {
+		track_cart();
+	}
+}
+
+
+/**
+ *
+ * Add a tracking code on the cart page to return the value of cart
+ */
+function track_cart() {
+		$order_id = $_GET['order'];
+		$order = new jigoshop_order( $order_id );
+		$cartAmount = $order->order_total;
+	if (is_page('thanks') && isset($_GET['order']) && $cartAmount > 0 ) {
+		echo "<!-- START IADVIZE CONVERSION TRACKING CODE -->
+				<script type=\"text/javascript\">
+					var idzTrans = {\"tID\":\"$order_id\",\"cartAmount\":$cartAmount};
+				</script>
+			<!-- END IADVIZE CONVERSION TRACKING CODE -->";
+	}
+
+
+}
 /**
  * Insert javascript function to call iAdvize solution.
  */
@@ -108,7 +144,7 @@ function idz_admin_notice() {
 		echo('<div class="error"><p><strong>'.
 			sprintf(__('iAdvize plugin is disabled. Please go to the <a href="%s">plugin page</a>
 			 and enter a valid account ID to enable it.' ),
-			admin_url('options-general.php?page=iadvize-wordpress-plugin')).'</strong></p></div>');
+			admin_url('options-general.php?page=iadvize-solution')).'</strong></p></div>');
 	}
 }
 
@@ -125,7 +161,7 @@ function idz_plugin_actions($links, $file) {
 		$this_plugin = plugin_basename(__FILE__);
 	}
 	if ($file == $this_plugin && function_exists('admin_url')) {
-		$settings_link = '<a href="'.admin_url('options-general.php?page=iadvize-wordpress-plugin').'">
+		$settings_link = '<a href="'.admin_url('options-general.php?page=iadvize-solution').'">
 		'.__('Settings', $idz_domain).'</a>';
 		array_unshift($links, $settings_link);
 	}
@@ -140,7 +176,7 @@ function idz_add_settings_page() {
 		$GLOBALS['idz_domain']; ?>
 		<div class="wrap">
 			<?php screen_icon() ?>
-			<h2><?php _e('iAdvize Wordpress Plugin', $idz_domain) ?></h2>
+			<h2><?php _e('iAdvize Solution', $idz_domain) ?></h2>
 			<form method="post" action="options.php">
 				<?php wp_nonce_field('update-options') ?>
 				<p>
@@ -156,7 +192,8 @@ function idz_add_settings_page() {
 			</form>
 		</div>
 	<?php }
-	add_submenu_page('options-general.php', __('iAdvize Plugin', $idz_domain), __('iAdvize Plugin', $idz_domain),
-	'manage_options', 'iadvize-wordpress-plugin', 'idz_settings_page');
+	add_submenu_page('options-general.php', __('iAdvize Plugin', $idz_domain), __('iAdvize', $idz_domain),
+	'manage_options', 'iadvize-solution', 'idz_settings_page');
 }
+
 

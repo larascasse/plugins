@@ -1,9 +1,12 @@
-=== iAdvize WordPress Plugin ===
+=== iAdvize Solution ===
 Contributors: jonathan gueron
 Tags: live chat, livechat, chat, live support
+Donate link:
 Requires at least: 2.7
 Tested up to: 3.5.*
 Stable tag: 2.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 A plugin that ease the integration of the iAdvize Realtime Customer Relationship application
 
@@ -42,7 +45,7 @@ To learn more about iAdvize visit [iAdvize](http://www.iadvize.com/), you can :
 4. Enter your iAdvize website ID to activate the plugin if ID was not already automagically filled by installer !
 
 If your ID isn’t find automagically, use our website to find it on your admin space selecting “code à insérer” in the tab “Paramètres”.
-
+Then on your wordpress admin panel, select "reglage" and 'iAdvize plugin'
 
 == Frequently Asked Questions ==
 
@@ -60,6 +63,16 @@ reply
 4. LiveChat discussion (ex : Pixmania)
 
 == Changelog ==
+
+= 1.0 =
+* Initial release
+= 2.0 =
+* Asynchrone script and documentation
+
+== Upgrade Notice ==
+
+= 2.0 =
+* Asynchrone script and documentation
 
 = 1.0 =
 * Initial release
