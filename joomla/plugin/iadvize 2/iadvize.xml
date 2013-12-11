@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="2.5" group="system" method="upgrade">
+	<name>PLG_SYSTEM_IADVIZE</name>
+	<author>jerome</author>
+	<creationDate>2013-08-06</creationDate>
+	<copyright>(C) 2013 iAdvize. All rights reserved.</copyright>
+	<license>GNU/GPL</license>
+	<authorEmail>jerome.regoin@iadvize.com</authorEmail>
+	<authorUrl>www.iadvize.com</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_SYSTEM_IADVIZE_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="iadvize">iadvize.php</filename>
+		<filename>index.html</filename>
+		<folder>elements</folder>
+	</files>
+	<media destination="iadvize" folder="media">
+		<filename>index.html</filename>
+		<folder>images</folder>
+	</media>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_system_iadvize.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_iadvize.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.plg_system_iadvize.sys.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.plg_system_iadvize.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="iAdvize" addfieldpath="/plugins/system/iadvize/elements">
+				<field type="title" label="PLG_SYSTEM_IADVIZE_TITRE" style="STYLE_BOX" />
+				<field type="title" label="PLG_SYSTEM_IADVIZE_NOTE" style="STYLE_NOTE" />
+				<field name="idiAdvize"
+					type="text"
+					label="PLG_SYSTEM_IADVIZE_ID_SUIVI_LABEL"
+					description="PLG_SYSTEM_IADVIZE_ID_SUIVI_DESC"
+					/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
