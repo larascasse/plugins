@@ -71,7 +71,7 @@ class Shopware_Plugins_Frontend_Iadvize_Bootstrap extends Shopware_Components_Pl
 	 * @return string This plugin version number
 	 */
 	public function getVersion() {
-		return '1.1.0';
+		return '1.0.0';
 	}
 
 	/**
@@ -85,6 +85,8 @@ class Shopware_Plugins_Frontend_Iadvize_Bootstrap extends Shopware_Components_Pl
 			'label' => $this->getLabel(),
 			'supplier' => 'iAdvize',
 			'description' => 'Chat plugin by iAdvize',
+			'author' => 'iAdvize',
+			'copyright' => 'Copyright © 2013, iAdvize',
 			'support' => 'support@iadvize.com',
 			'link' => 'http://www.iadvize.com'
 		);
@@ -131,7 +133,7 @@ class Shopware_Plugins_Frontend_Iadvize_Bootstrap extends Shopware_Components_Pl
 
 	protected function registerEvents() {
 		$this->subscribeEvent(
-			'Enlight_Controller_Action_PostDispatch',
+			'Enlight_Controller_Action_PostDispatch_Frontend_Index',
 			'onPostDispatch'
 		);
 		$this->subscribeEvent(
@@ -170,13 +172,13 @@ class Shopware_Plugins_Frontend_Iadvize_Bootstrap extends Shopware_Components_Pl
 		$view = $controller->View();
 		$amount = null;
 
-		if (!$request->isDispatched()
-			|| $response->isException()
-			|| $request->getModuleName() != 'frontend'
-			|| $request->isXmlHttpRequest()
-			|| !$view->hasTemplate()
-		) {
-			return;
+		// Set template
+		$view->addTemplateDir($this->Path().'Views/');
+		$view->extendsTemplate('frontend/plugins/iadvize/index.tpl');
+
+		if (!$request->isDispatched() || $response->isException()
+			|| $request->getModuleName() != 'frontend' || !$view->hasTemplate()) {
+				return;
 		}
 
 		// Check tracking code
@@ -193,10 +195,6 @@ class Shopware_Plugins_Frontend_Iadvize_Bootstrap extends Shopware_Components_Pl
 			$view->sCartAmount = $this->vars['amount'];
 			$view->sTransactionId = $this->vars['orderNumber'];
 		}
-
-		// Set template
-		$view->addTemplateDir(dirname(__FILE__).'/Views/');
-		$view->extendsTemplate('frontend/plugins/iadvize/livechat.tpl');
 	}
 
 	/**
