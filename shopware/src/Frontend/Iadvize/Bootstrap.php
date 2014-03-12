@@ -131,6 +131,9 @@ class Shopware_Plugins_Frontend_Iadvize_Bootstrap extends Shopware_Components_Pl
 		return array('success' => true, 'invalidateCache' => array('frontend'));
 	}
 
+	/*
+	 * Register events.
+	 */
 	protected function registerEvents() {
 		$this->subscribeEvent(
 			'Enlight_Controller_Action_PostDispatch_Frontend_Index',
