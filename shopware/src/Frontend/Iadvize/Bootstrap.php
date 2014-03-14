@@ -132,7 +132,9 @@ class Shopware_Plugins_Frontend_Iadvize_Bootstrap extends Shopware_Components_Pl
 	}
 
 	/*
-	 * Register events.
+	 * Register some events.
+	 *
+	 * @return void
 	 */
 	protected function registerEvents() {
 		$this->subscribeEvent(
